@@ -1,41 +1,45 @@
-import { Menu } from "../../components/Menu";
-
-import { useState } from "react";
+import { Menu } from "../../shared/components/Menu"
+import { useCallback, useContext, useRef, useState } from "react"
+import { InputLogin } from "./components/InputLogin"
+import React from "react";
+import { ButtonLogin } from "./components/ButtonLogin";
+import { LoggedUserContext } from "../../shared/contexts";
 
 export const Login = () => {
-  const [userEmail, setUserEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
   
-  };
- 
+  const {loggedUser} = useContext(LoggedUserContext) //desestruturado, igual ao Dashboard
 
+  const inputPasswordRef = useRef<HTMLInputElement>(null)
+
+  const [userEmail, setUserEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const handleLogin = useCallback(() => {
+    console.log(userEmail, password)
+  }, [userEmail, password])
+ 
   return (
     <div>
       <Menu />
       <form>
-        <label>
-          <span className="ml-4">Email: </span>
-          <input
+        <p>{loggedUser}</p>
+          <InputLogin
+            label="Email"
             value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)}
-            className="border border-2px border-blue-500 rounded-md bg-blue-100"
+            //onChange={(e) => setUserEmail(e.target.value)}
+            onChange={newValue => setUserEmail(newValue)}
+            onPressEnter={() => inputPasswordRef.current?.focus()}
           />
-        </label>
-        <label>
-          <span className="pl-4">Senha: </span>
-          <input
+          <InputLogin
+            label="Senha"
+            type = "password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            className="border border-2px border-blue-500 rounded-md bg-blue-100"
+            ref={inputPasswordRef}
+            //onChange={(e) => setPassword(e.target.value)}
+            onChange={newValue => setPassword(newValue)}
+            
           />
-        </label>
-        <button
-          onClick={handleLogin}
-          className=" rounded-md bg-blue-300 pl-2 pr-2 m-6">Entrar
-        </button>
+          <ButtonLogin type="button" onClick={handleLogin} />
+      
       </form>
     </div>
   );

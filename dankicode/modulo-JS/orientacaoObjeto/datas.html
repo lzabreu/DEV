@@ -1,0 +1,35 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+      //data inteira, timestamp
+      var dataAtual = new Date()
+      console.log(dataAtual)
+      //dia
+      var dataDeHoje = dataAtual.getDate()
+      console.log(dataDeHoje)
+      //mes
+      mesAtual = dataAtual.getMonth()
+      console.log(mesAtual)
+      //ano
+      anoAtual = dataAtual.getFullYear()
+      console.log(anoAtual)
+      //dia da semana
+      diaDaSemana = dataAtual.getDay()
+      console.log(diaDaSemana) //0 domingo....
+
+      //calculo
+      var dataFutura = new Date('11/22/2023')
+      console.log(dataFutura)
+
+      var diferenca = dataFutura.getTime() - dataAtual.getTime() //milisegundos
+      console.log(diferenca)
+      //para saber os dias,divide pela multiplicacao de mil(segundos), 3600 (minutos na hora), 24 (horas no dia))
+      var diasDeDiferenca = diferenca / (1000 * 3600 * 24)
+      console.log(diasDeDiferenca) 
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <script>
+      //spread ...
+      const ar = ['Luciano', 'Paula', 'Lucas', 'Fernanda']
+      const [e, f, ...rest] = ar
+      console.log(rest) //mostra Lucas e Fernanda
+      console.log(rest[1]) //mostra Fernanda
+
+      var nomes = [{
+        nome: 'Luciano'
+        },
+        {
+          nome: 'Paula'
+        },
+        {
+          nome: 'Fernanda'
+        }
+      ]
+      const objetos = [...nomes,{
+        nome: 'Lucas'
+      }]
+
+      console.log(objetos) //mostra
+
+      //rest
+      function numeros(...num){ //como se criasse um array ilimitado
+        console.log(num) 
+      }
+      numeros(1, 2, 3, 4, 5, 6, {nome: 'Luciano'}) //pode passar o que quiser como parametro
+
+
+    </script>
+  </body>
+</html>

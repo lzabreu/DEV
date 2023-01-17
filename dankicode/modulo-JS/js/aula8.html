@@ -1,0 +1,38 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+      var n1 = prompt('Primeiro numero?')
+      var sinal = prompt('Operação?')
+      while (sinal != '+' && sinal != '-' && sinal != '*' && sinal != '/'){
+        alert('Operação deve ser + - * /')
+        sinal = prompt('Operação?') 
+      }
+      var n2 = prompt('Segundo numero?')
+      numeroInicial = parseInt(n1)
+      numeroFinal = parseInt(n2)
+      
+      var resultado = 0
+
+      switch (sinal) {
+        case '+':
+        resultado = numeroInicial + numeroFinal
+        break;
+        case '-':
+        resultado = numeroInicial - numeroFinal
+        break;
+        case '/':
+        resultado = numeroInicial / numeroFinal
+        break;
+        case '*':
+        resultado = numeroInicial * numeroFinal
+        break;
+      }
+      alert(resultado)
+
+
+    </script>
+  </body>
+</html>

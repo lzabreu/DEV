@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --primary-100: #f4f4fa;
+  --primary-300: #dfebeb;
+  --text-color: #10131C;
+  font-size: 62.5%; /* 100 -16px x-10px x=62.5% */
+}
+a{
+  color: var(--text-color);
+}
+body{
+  background-color: var(--primary-300);
+  color: var(--text-color);
+  font-size: 1.6rem; /* a partir de agora 30px = 3rem pois 1 rem não é mais 16px e sim 10px */
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+body *{
+  font-family: "Poppins", sans-serif;
+}
+form{
+  background-color: white;
+  width: min(73rem, 87%);
+  margin: auto;
+  padding: 9rem;
+  border-radius: 3.2rem;
+  font-size: 1.2rem;
+  box-shadow: 0 0 4.8rem rgba(0, 0, 0, 0.1);
+}
+fieldset{
+  border: 0;
+ 
+}
+fieldset legend{
+  font-size: 3.2rem; /* 32px */
+  font-family: "Libre Baskerville", serif;
+  margin-bottom: 2.4rem;
+}
+.radio-wrapper{
+  border-radius: 1.6rem;
+  background-color: var(--primary-100);
+  border: 1px solid #bbc1c1;
+  padding: 2.4rem;
+}
+.radio-wrapper > div{ /* proxima div depois do wrapper */
+  display: flex;
+  gap: .8rem;
+}
+.radio-wrapper input[type="radio"]{
+  appearance: none;
+  border: 1px solid #bbc1c1;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+}
+.radio-wrapper input[type="radio"]:checked{
+  background-image: radial-gradient(white 35%, black 40%);
+}
+.radio-wrapper:not(:has(:checked)){
+  opacity: .6;
+}
+.radio-wrapper label{
+  font-size: 2rem;
+  
+}
+.radio-wrapper p{
+  padding-left: 1rem;
+  padding-left: 3.8rem;
+}
+.radio-wrapper + .radio-wrapper,
+.checkbox-wrapper + .checkbox-wrapper{
+  margin-top: 2.4rem;
+}
+.checkbox-wrapper{
+  display: flex;
+  gap: .8rem;
+  padding-inline: 2rem;
+}
+.checkbox-wrapper input[type="checkbox"]{
+  appearance: none;
+  flex-shrink: 0;
+  border: 1px solid #bbc1c1;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: .6rem;
+  position: relative;
+}
+.checkbox-wrapper input[type="checkbox"]:focus{
+  outline: 3px solid #bbc1c1;
+}
+.checkbox-wrapper input[type="checkbox"]:checked::before{
+  content: "✓";
+  font-size: 2.4rem;
+  position: absolute;
+  top: -0.6rem;
+  left: .4rem;
+
+}
+.checkbox-wrapper:not(:has(:checked)){
+  opacity: .6;
+}
+.checkbox-wrapper label{
+  margin-top: .4rem;
+}
+.radio-wrapper + .checkbox-wrapper{
+  margin-top: 4.8rem;
+}
+button{
+  margin-top: 5.8rem;
+  width: 100%;
+  background-color: #130f28;
+  padding-block: 2rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+}
+button:hover{
+  background-color: #312664;
+}
+small{
+  text-align: center;
+  display: block;
+  margin-top: 2.8rem;
+}

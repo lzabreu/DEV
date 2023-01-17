@@ -1,0 +1,49 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+      //Função
+      function testes() {
+        console.log("chamou a função");
+      }
+      testes();
+
+      //com parâmetro
+      function teste1(nome) {
+        console.log(nome);
+      }
+      teste1("Luciano");
+
+      //com retorno
+      function pegarNome() {
+        return "Luciano";
+      }
+      var nome = pegarNome();
+
+      //com parâmetro e retorno
+      function executaSoma (a, b){
+        return a+b;
+      }
+
+      var n1 = 1;   
+      var n2 = 2;
+
+      var soma = executaSoma(1, 2)
+      console.log(soma);
+
+      //atribuindo uma função a variável
+
+      var func = function(){
+      }
+
+      const func1 = function(){
+      }
+      func();
+      func1();
+
+    </script>
+  </body>
+  
+</html>

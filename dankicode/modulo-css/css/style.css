@@ -1,0 +1,102 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*a fonte é aplicada em todo site*/
+  font-family: 'Roboto', sans-serif;
+}
+
+h2{
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  /*a fonte é aplicada somente no h2*/
+  font-family: 'Roboto', sans-serif;
+}
+
+/*a classe e o id podem ter o mesmo nome pois são propriedades diferentes*/
+/*mas não é uma boa prática*/
+
+/*a classe pode ser reaproveitada e o id não, podemos ter vários elementos com a mesma classe*/
+
+/*para a classe usamos o . */
+
+.h2modificado{
+  font-size: 40;
+}
+
+/*para o id usamos o # */
+#h2modificado{
+  font-size: 30;
+}
+
+/*atributo*/
+[name="paragrafo"]{
+  color: aqua;
+}
+
+/*estilizar a div toda*/
+
+div{
+  background-color: lightblue;
+  /*pode ser hexadecimal #0302ff */
+  /*pode ser rgb rgb(0, 0, 0)*/
+  /*pode ser rgba rgba(0, 0, 0, 0.5) transparência de 0 a 1*/
+  /*pode ser hls hls(hue, saturation, lightness)*/
+  /*pode ser hls hlsa(hue, saturation, lightness, alpha)*/
+ 
+}
+
+/*colocar fundo em uma div ou elemento*/
+.bg{
+  width: 100%;
+  height: 200px;
+  background-image: url("./images/bg.jpg");
+  /*opcões*/
+  background-repeat: no-repeat;
+  background-position: center; 
+  /*podem ser mais ex:
+  background-position: bottom left;
+  background-position: 50px 70px;
+  background-position: 10% 20%;
+  */
+  background-size: cover; /*opcional para cobrir toda div e não sobrar espaço em branco */
+}
+
+.div1{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  /*opcional para alinhar em linha*/
+  /*display: inline-block;*/
+}
+.div2{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  
+}
+.div3{
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  
+}
+
+.div4{
+  width: 300px;
+  height: 200px;
+  padding: 20px; /* vale para todos os paddings mas pode ser 
+  padding-top: 10px, right, bottom, left
+  padding: 25px 50px 30px - top25, right e left50, bottom30
+  padding: 25px 30px  - top e bottom 25, right e left 30*/
+  margin: 10px; /*margem tambem segue a regra de padding*/
+}
+#container{
+  display: flex;
+  /*opções*/
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+}

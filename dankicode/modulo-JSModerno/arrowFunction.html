@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <script>
+
+      function teste(){
+        console.log('Função escrita sem arrow function')
+      }
+
+      const teste1 = () =>{
+        console.log('Função arrow function')
+      }
+
+      teste()
+      teste1()
+
+      //variações de arrow function
+      
+      const s = (sobrenome) => 'Luciano ' + sobrenome
+      console.log(s('Abreu'))
+
+      const so = sobrenome => 'Luciano ' + sobrenome
+      console.log(so('Abreu'))
+
+      const sob = sobrenome => {
+        return 'Luciano ' + sobrenome
+      }
+      console.log(sob('Abreu'))
+
+      const sobr = (sobrenome) => {
+        let sobre = 'Luciano ' + sobrenome
+        return sobre
+      }
+      console.log(sobr('Abreu'))
+
+
+
+    </script>
+  </body>
+</html>

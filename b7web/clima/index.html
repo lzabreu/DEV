@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Clima</h1>
+  <form class="pesquisa">
+    <input type="text" id="busca" placeholder="Digite a cidade">
+    <button>Buscar</button>
+  </form>
+  <div class="mostra">
+    <h2>São Paulo</h2>
+    <div class="dados">
+      <div class="temperatura">
+        <p>Temperatura</p>
+        <div class="tempInfo">-- <sup>˚C</sup> </div>
+        <img src="https://openweathermap.org/img/wn/50d.png" alt="">
+        <span></span>
+      </div>
+      <div class="vento">
+        <p>Vento</p>
+        <div class="ventoInfo">-- <span>km/h</span> </div>
+        <div class="direcao">
+          <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+        </div>
+        <p class="direcaoVento"></p>
+      </div>
+    </div>
+  </div>
+  <div class="aviso"></div>
+  <p>Criado por Luciano</p>
+  <script src="./script.js"></script>
+</body>
+
+</html>

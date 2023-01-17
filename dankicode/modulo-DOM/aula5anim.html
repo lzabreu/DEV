@@ -1,0 +1,36 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="box">
+      
+    </div>
+
+    <script>
+      var quad = document.querySelector('.box');
+      console.log(quad);
+      setTimeout(() => {
+        quad.classList.add('animEsquerda')
+      },1000)
+      // depois da animação se der click ele volta a posição inicial
+      quad.addEventListener('click', () => {
+        quad.classList.remove('animEsquerda')
+      })
+    </script>
+
+    <style>
+      .box{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin-left: 0px;
+      }
+      .animEsquerda {
+        transition: 1s;
+        margin-left: 90px;
+      }
+    </style>
+
+  </body>
+</html>

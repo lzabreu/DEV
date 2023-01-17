@@ -1,0 +1,33 @@
+/* comentários */
+h1 {
+  color: aqua;
+}
+/* estilo para ID */
+#title {
+  color: red
+}
+/* estilo para Class */
+.paragraph {
+  color: blue;
+  background-color: lightgray;
+  font-size: 30px
+}
+/* dois elementos, uma regra */
+p, .otherParagraph {
+  color: #09af23
+}
+/* depois pode mudar atributos em separado */
+.otherParagraph {
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+#backgroundimage {
+  background-image: url("../img/pattern.png");
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid rgb(128, 0, 107);
+  align-items: center;
+  text-align: center;
+}

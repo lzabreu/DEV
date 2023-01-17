@@ -1,0 +1,26 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="box">
+      <div class="inside-box">Texto</div>
+    </div>
+
+    <script>
+      var element = document.querySelectorAll('.box .inside-box')
+      console.log(element.length)
+      element[0].style.width = 100;
+      element[0].style.height = 60;
+      element[0].style.background = 'red';
+      
+    </script>
+    <!--pode fazer também com style e usar css puro --> 
+    <style>
+      .box .inside-box {
+        color: blue;
+      }
+    </style>
+
+  </body>
+</html>

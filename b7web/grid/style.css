@@ -1,0 +1,67 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  background-color: #ccc;
+  display: grid;
+  gap: 10px;
+  grid-template-areas: 
+    "cabecalho cabecalho cabecalho cabecalho cabecalho"
+    "menu conteudo conteudo conteudo conteudo"
+    "rodape rodape rodape rodape anuncio"
+  ;
+}
+.item{
+  background-color: blue;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+}
+header{
+  grid-area: cabecalho;
+}
+nav{
+  grid-area: menu;
+}
+section{
+  grid-area: conteudo;
+}
+footer{
+  grid-area: rodape;
+}
+.ad{
+  grid-area: anuncio;
+}
+
+.flex1{
+  display: flex;
+  background-color: aqua;
+  padding: 20px;
+  color: black;
+  gap: 10px;
+}
+.flex2{
+  flex: 1;
+  background-color: beige;
+  padding: 20px;
+  color: black;
+}
+.flex3{
+  flex: 1;
+  background-color: bisque;
+  padding: 20px;
+  color: black;
+}
+
+@media (max-width: 750px) {
+  .container{
+    grid-template-areas: 
+      "cabecalho cabecalho cabecalho  menu"
+      "conteudo conteudo conteudo  conteudo"
+      "rodape rodape rodape  anuncio"
+    ;
+  }
+}

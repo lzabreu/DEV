@@ -1,0 +1,53 @@
+<html>
+  <body>
+    texto <b style="color:red; font-size:20" >de</b> exemplo
+    <input type="color" />
+    <input type="date" />
+
+    <script>
+      //Promise
+      function testes1(){
+        return new Promise(function(resolve, reject){
+
+          const erro = false //mudando para falso ou true
+          if(erro){
+            reject('Erro...')
+          }else{
+            resolve('Promise do teste1 foi resolvida')
+          }
+        })
+      }
+      testes1().then (function(res){
+        console.log(res)
+      }).catch(function(err){
+        console.log(err) 
+      })
+
+
+      //async
+      async function testes2(){
+        return new Promise(function(resolve, reject){
+          console.log('Entrou no testes2')
+          setTimeout(function(){
+            const erro = false //mudando para falso ou true
+            if(erro){
+              reject('Erro...')
+            }else{
+              resolve('Promise do teste2 foi resolvida')
+            }
+          }, 5000)
+         
+        })
+      }
+      async function testes3(){
+        await testes2().then(function(res){
+          console.log(res)
+        })
+        console.log('Finalizou')
+      }
+      console.log('chamou o testes3')
+      testes3()
+      
+    </script>
+  </body>
+</html>

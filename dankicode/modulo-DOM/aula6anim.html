@@ -1,0 +1,46 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="conteudo">
+      <h2>Título<span>Saber mais</span></h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nisi impedit at quia eaque veritatis nemo aspernatur. Perferendis facere similique sit sed molestias vel reprehenderit, ea dolores, ipsum unde deserunt.</p>
+    </div>
+
+    <script>
+      var saber = document.querySelector('.conteudo span');
+      var texto = document.querySelector('.conteudo p');
+      saber.addEventListener('click', () => {
+      
+        
+          texto.classList.toggle('conteudoAparece')
+          if(texto.classList.contains('conteudoAparece')){
+            saber.innerHTML = 'Ocultar'
+          }else{
+            saber.innerHTML = 'Saber mais'
+          }
+        
+      })
+    </script>
+
+    <style>
+      .conteudo span{
+        margin-left: 20px;
+        cursor: pointer;
+        font-size: 12px;
+        text-decoration: underline;
+      }
+      .conteudo p {
+        height: 1px;
+        overflow: hidden;
+        transition: .5s;
+      }
+      .conteudoAparece {
+        height: 200px !important;
+        overflow: auto ;      
+      }
+    </style>
+
+  </body>
+</html>

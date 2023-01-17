@@ -1,0 +1,34 @@
+<html>
+  <head>
+
+  </head>
+  <Body>
+    <script>
+
+      class Pessoa{
+        constructor(){
+          this.nome = "Luciano";
+        }
+        printNome(){      //metodo, parecido com função
+          return this.nome
+        }
+      }
+      pessoa = new Pessoa();
+      console.log(pessoa)
+
+      console.log(pessoa.printNome())
+
+      class Jogador extends Pessoa{
+        constructor(){
+          super()
+          this.pontuacao = 10
+        }
+      }
+
+      jogador = new Jogador();
+
+      console.log(jogador.printNome() + " " + jogador.pontuacao)
+
+    </script>
+  </Body>
+</html>

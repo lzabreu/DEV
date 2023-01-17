@@ -1,11 +1,42 @@
 import React from "react"
-import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from "@mui/material"
+import { Avatar, Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from "@mui/material"
 import { Box } from "@mui/system"
-import { Home, MailOutline } from "@mui/icons-material"
+import { MailOutline, Home } from "@mui/icons-material"
 import { useDrawerContext } from "../../contexts"
+import { useMatch, useNavigate, useResolvedPath } from "react-router-dom"
 
 interface IDrawerProps {
   children: React.ReactNode
+}
+
+interface IListItemLinkProps {
+  label: string
+  icon: string
+  to: string
+  onClick: (() => void) | undefined
+}
+const ListItemLink: React.FC<IListItemLinkProps> = ({to, icon, label, onClick}) => {
+  const navigate = useNavigate()
+
+  const resolvedPath = useResolvedPath(to)
+  const match = useMatch({path: resolvedPath.pathname, end: false})
+
+  const handleClick = () => {
+    navigate(to)
+    if (onClick) onClick()
+  }
+
+  return (
+    <ListItemButton selected={!!match} onClick={onClick}>
+      <ListItemIcon>
+        <Icon> 
+          {icon}
+        </Icon>
+
+      </ListItemIcon>
+      <ListItemText primary={label} />
+    </ListItemButton>
+  )
 }
 
 export const MenuLateral: React.FC<IDrawerProps> = ({ children }) => {
@@ -28,18 +59,18 @@ export const MenuLateral: React.FC<IDrawerProps> = ({ children }) => {
           <Divider />
           <Box flex={1}>
             <List component="nav">
-              <ListItemButton >
-                <ListItemIcon>
-                  <Home />
-                </ListItemIcon>
-                <ListItemText primary="Página Inicial" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemIcon>
-
-                </ListItemIcon>
-                <ListItemText primary="Drafts" />
-              </ListItemButton>
+              <ListItemLink 
+                icon ="home"
+                label="Pagina Inicial"
+                to="/pagina-inicial"
+                onClick={smDown ? toggleDrawerOpen : undefined}
+              />
+              <ListItemLink 
+                icon ="mailOutline"
+                label="Email"
+                to="/mail"
+                onClick={smDown ? toggleDrawerOpen : undefined}
+              />
             </List>
           </Box>
         </Box>

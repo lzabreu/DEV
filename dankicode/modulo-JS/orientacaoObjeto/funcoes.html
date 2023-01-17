@@ -1,0 +1,49 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+
+      function Pessoa(){
+        this.nome = 'Luciano' //atribuindo o valor
+        this.idade = 58,
+        this.printNomeIdade = function(){
+          return this.nome + " tem " + this.idade + " anos"
+        }
+      }
+
+      var pessoa = new Pessoa()
+      console.log(pessoa.nome)
+
+      //trocando o valor da variavel
+      pessoa.nome = 'Paula'
+      console.log(pessoa.nome)
+
+      //chamando a função de dentro do objeto
+      console.log(pessoa.printNomeIdade())
+
+      //passando parâmetros para o objeto
+      function Animal(nome, raca){
+        if(nome == undefined){
+          nome = 'cachorro'
+        }
+        if(raca == undefined){
+          raca = 'vira-lata'
+        }
+        this.nome = nome,
+        this.raca = raca
+      }
+      //com parametro
+      var cachorro = new Animal('cachorro', 'Rhodesian')
+      console.log(cachorro.nome + ' ' + cachorro.raca)
+
+      //sem parametro cai na condicional
+      var animal = new Animal()
+      console.log(animal.nome + ' ' + animal.raca)
+
+
+
+    </script>
+  </body>
+</html>

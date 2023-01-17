@@ -1,0 +1,37 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+      //Variáveis
+      var nome = 'nome'; //string pode ser com aspas simples ou duplas
+      var sobrenome = "Abreu";
+      var isAdmin = true; // boolean true ou false
+      var idade = 57; //numero inteiro ou decimal 10.98
+
+      //var - variável global
+      var nome = 'Luciano';
+      console.log(nome);
+      nome = 'Paula';
+      console.log(nome);
+
+      //let variável no contexto
+      {
+        let idade = 58;
+        console.log(idade); // aparece no console.log
+        console.log(nome); // aparece no console.log pois é uma variável global
+      }
+      //console.log(idade); // varável aparece como indefinida pois está função não está no escopo da declaração da variável
+
+      //const
+      const sobrenome = 'Abreu';
+      console.log(sobrenome);
+      sobrenome = 'Zoratti'; //erro pois não se pode trocar o valor de uma constante
+      console.log(sobrenome);
+
+
+    </script>
+  </body>
+  
+</html>
